@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <guest-form />
-    <guest-list />
+    <guest-list :guests="guests"/>
   </div>
 </template>
 
