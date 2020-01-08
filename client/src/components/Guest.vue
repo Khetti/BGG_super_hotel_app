@@ -17,7 +17,7 @@ export default {
   methods: {
     deleteGuest(){
       GuestsService.deleteGuest(this.guest._id)
-      .then(() => eventBus.$emit('game-deleted', this.game_id))
+      .then(() => eventBus.$emit('guest-deleted', this.game_id))
       }
     }
   }
