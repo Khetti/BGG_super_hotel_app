@@ -18,18 +18,19 @@ export default {
       guests: []
     }
   },
+
+  mounted(){
+    GuestsService.getGuests()
+    .then(guests => this.guests = guests);
+
+    eventBus.$on('guest-added', (guest) => {
+      this.guests.push(guest)
+    })
+  },
+
   components: {
     'guest-form': GuestForm,
     'guest-list': GuestList
-  },
-  mounted(){
-    this.fetchData();
-  },
-  methods: {
-    fetchData(){
-      GuestsService.getGuests()
-      .then(guests => this.guests = guests);
-    }
   }
 }
 </script>
