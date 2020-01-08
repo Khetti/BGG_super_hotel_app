@@ -29,7 +29,8 @@ export default {
       e.preventDefault()
       const guest = {
         name: this.name,
-        email: this.email
+        email: this.email,
+        checked_in: this.checked_in
       }
       GuestsService.postGuest(guest)
       .then(res => eventBus.$emit('guest-added', res))
