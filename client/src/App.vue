@@ -20,8 +20,7 @@ export default {
   },
 
   mounted(){
-    GuestsService.getGuests()
-    .then(guests => this.guests = guests);
+    this.fetchData();
 
     eventBus.$on('guest-added', (guest) => {
       this.guests.push(guest)
@@ -31,6 +30,13 @@ export default {
   components: {
     'guest-form': GuestForm,
     'guest-list': GuestList
+  },
+
+  methods: {
+    fetchData(){
+      GuestsService.getGuests()
+      .then(guests => this.guests = guests);
+    }
   }
 }
 </script>
