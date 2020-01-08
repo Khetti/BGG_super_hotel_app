@@ -8,7 +8,7 @@
 <script>
 import GuestForm from '@/components/GuestForm';
 import GuestList from '@/components/GuestList';
-import GuestsService from '@/services/GuestsService'l;
+import GuestsService from '@/services/GuestsService';
 import { eventBus } from './main';
 
 export default {
