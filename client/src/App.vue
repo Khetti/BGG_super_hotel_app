@@ -9,6 +9,11 @@ import GuestForm from '@/components/GuestForm';
 
 export default {
   name: 'app',
+  data () {
+    return {
+      guests: []
+    }
+  },
   components: {
     'guest-form': GuestForm
   }
