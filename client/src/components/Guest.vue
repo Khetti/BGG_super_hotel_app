@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import {eventBus} from '@main.js'
+import {eventBus} from '@/main.js'
 import GuestsService from '@/services/GuestsService.js'
 
 export default {
@@ -21,7 +21,7 @@ export default {
       }
     }
   }
-}
+
 </script>
 
 <style lang="css" scoped>
