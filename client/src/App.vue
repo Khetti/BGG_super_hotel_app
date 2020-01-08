@@ -2,14 +2,12 @@
   <div id="app">
     <guest-form />
     <guest-list :guests="guests"/>
-    <guest v-for="(guest, index) in guests" :key="index" :game="guest" />
   </div>
 </template>
 
 <script>
 import GuestForm from '@/components/GuestForm';
 import GuestList from '@/components/GuestList';
-import Guest from '@/components/Guest'
 import GuestsService from '@/services/GuestsService';
 import { eventBus } from './main';
 
@@ -30,14 +28,14 @@ export default {
 
     eventBus.$on('guest-deleted', (id) => {
       let index = this.guests.findIndex(guest => guest._id === id)
-      this.guest.splice(index, 1)
+      this.guests.splice(index, 1)
     })
+
   },
 
   components: {
     'guest-form': GuestForm,
-    'guest-list': GuestList,
-    'guest': Guest
+    'guest-list': GuestList
   },
 
   methods: {

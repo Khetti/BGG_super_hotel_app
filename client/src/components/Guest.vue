@@ -3,7 +3,7 @@
     <h2>Name: {{guest.name}}</h2>
     <p>email: {{guest.email}}</p>
     <p>Checked in: {{guest.checked_in}}</p>
-    <button type="button" @click="deleteGuest">Delete guest</button>
+    <button type="button" @click="deleteGuest(guest._id)">Delete guest</button>
   </div>
 </template>
 
@@ -15,10 +15,10 @@ export default {
   name: 'guest',
   props: ['guest'],
   methods: {
-    deleteGuest(){
-      GuestsService.deleteGuest(this.guest._id)
-      .then(() => eventBus.$emit('guest-deleted', this.game_id))
-      }
+    deleteGuest(id){
+			GuestsService.deleteGuest(id)
+			.then(() => eventBus.$emit('guest-deleted', id)
+		)}
     }
   }
 
