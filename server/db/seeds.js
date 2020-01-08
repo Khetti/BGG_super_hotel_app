@@ -14,6 +14,7 @@ db.guests.insertMany([
   },
   {
     name: "Brendan 'Coolguy' Huckledoo",
-    email: "spambox1337@gmail.co.uk"
+    email: "spambox1337@gmail.co.uk",
+    checked_in: false
   }
 ]);
