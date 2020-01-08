@@ -31,7 +31,7 @@ const createRouter = function (collection) {
   })
 
   router.delete('/:id', (req, res) => {
-    const id = ObjectID(req.params.id)
+    const id = ObjectId(req.params.id)
     collection
       .deleteOne({_id: id})
       .then((result) => {
